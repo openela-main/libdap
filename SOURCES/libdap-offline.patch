@@ -1,0 +1,26 @@
+diff -up libdap-3.18.1/tests/Makefile.am.offline libdap-3.18.1/tests/Makefile.am
+--- libdap-3.18.1/tests/Makefile.am.offline	2015-10-19 16:03:35.000000000 -0600
++++ libdap-3.18.1/tests/Makefile.am	2016-08-12 09:33:37.767696856 -0600
+@@ -112,7 +112,6 @@ $(EXPRTESTSUITE) $(DMRTESTSUITE) $(GETDA
+ 	$(SHELL) '$(DDSTESTSUITE)' $(TESTSUITEFLAGS)
+ 	$(SHELL) '$(EXPRTESTSUITE)' $(TESTSUITEFLAGS)
+ 	$(SHELL) '$(DMRTESTSUITE)' $(TESTSUITEFLAGS)
+-	$(SHELL) '$(GETDAPTESTSUITE)' $(TESTSUITEFLAGS)
+ 
+ # Make sure there are no spaces after the DASTESTSUITE names. jhrg 3/16/15
+ # Delete the scripts here and not using CLEANFILES because this target is
+diff -up libdap-3.18.1/unit-tests/Makefile.am.offline libdap-3.18.1/unit-tests/Makefile.am
+--- libdap-3.18.1/unit-tests/Makefile.am.offline	2016-08-12 09:33:37.768696852 -0600
++++ libdap-3.18.1/unit-tests/Makefile.am	2016-08-12 09:34:12.984547765 -0600
+@@ -67,9 +67,9 @@ D4-xml.tar.gz: D4-xml/DMR_*[0-9].xml
+ if CPPUNIT
+ UNIT_TESTS = marshT arrayT attrTableT structT sequenceT ddsT dasT \
+ 	RegexTest ArrayTest AttrTableTest ByteTest MIMEUtilTest ancT DASTest \
+-	DDSTest	DDXParserTest  generalUtilTest HTTPConnectTest parserUtilTest \
++	DDSTest	DDXParserTest  generalUtilTest parserUtilTest \
+ 	RCReaderTest SequenceTest SignalHandlerTest  MarshallerTest \
+-	HTTPCacheTest ServerFunctionsListUnitTest
++	ServerFunctionsListUnitTest
+ 
+ if DAP4_DEFINED
+ UNIT_TESTS += D4MarshallerTest D4UnMarshallerTest D4DimensionsTest \
